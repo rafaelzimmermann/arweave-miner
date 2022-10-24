@@ -26,9 +26,9 @@ RUN echo "deb https://packages.erlang-solutions.com/ubuntu focal contrib" | tee 
 RUN apt update
 RUN apt install -y erlang
 
-RUN cd /tmp; git clone --recursive --depth 1 --branch N.2.5.1.0 https://github.com/ArweaveTeam/arweave.git
+RUN cd /tmp; git clone --recursive --depth 1 --branch N.2.5.3 https://github.com/ArweaveTeam/arweave.git
 RUN cd /tmp/arweave; ./rebar3 as prod tar
-RUN cd /app; tar -zxvf /tmp/arweave/_build/prod/rel/arweave/arweave-2.5.1.0.tar.gz
+RUN cd /app; tar -zxvf /tmp/arweave/_build/prod/rel/arweave/arweave-2.5.3.tar.gz
 
 RUN ulimit -n 65535
 
